@@ -29,7 +29,7 @@ export const sendMessage = async (req, res) => {
 
         await Promise.all([conversation.save(), newMessage.save()]); //SAVING BOTH IN PARALELL
 
-        res.status(400).json(newMessage);
+        res.status(201).json(newMessage);
 
     } catch (error) {
         console.log("Error in sendMessage controller", error.message);
@@ -47,13 +47,14 @@ export const getMessages = async (req, res) => {
         }).populate("messages"); //TO AVOID GETTING THE MESSAGES IN A ARRAY, INSTEAD AS DIFFERENT OBJECTS
 
         if (!conversation) {
-            res.status(666).json([]);
+            return res.status(200).json([]);
         }
 
-        res.status(400).json(conversation.messages);
+        const messages = conversation.messages;
+        res.status(200).json(messages);
 
     } catch (error) {
         console.log("Error in getMessages controller", error.message);
-        res.status(666).json({ error: "Internal server error" });
+        res.status(500).json({ error: "Internal server error" });
     }
 }

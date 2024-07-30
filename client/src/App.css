@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-body{
-  background: url('assets/retro_gaming_room-wallpaper-1366x768.jpg');
+html, body{
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2));
+  background-image: url('assets/retro_gaming_room-wallpaper-1366x768.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 100vh;
-  background-attachment: fixed;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .login-header {
