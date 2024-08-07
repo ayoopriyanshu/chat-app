@@ -5,6 +5,26 @@ A real-time chat application built with the MERN stack (MongoDB, Express.js, Rea
 
 >TryChatrr- https://chatrr-app.onrender.com/login
 
+### Setup .env file
+
+```js
+PORT= [GIVE A PORT NUMBER]
+MONGO_DB_URI= [PROVIDE THE DATABASE URL]
+JWT_KEY= [RANDOM KEY FOR GENERATING TOKENS]
+```
+
+### Build the app
+
+```shell
+npm run build
+```
+
+### Start the app
+
+```shell
+npm start
+```
+
 ## 💻SECTIONS & FEATURES
 
 **1. Login & Signup functionality**
