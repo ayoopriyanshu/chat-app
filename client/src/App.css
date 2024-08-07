@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-html, body{
+html{
   background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2));
-  background-image: url('assets/retro_gaming_room-wallpaper-1366x768.jpg');
+  background-image: url('public/themes/retro_gaming_room-wallpaper-1366x768.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 100vh;
   overflow: hidden;
+  zoom: 95%;
 }
 
 .login-header {
   color: black;
   font-family: "Press Start 2P";
-  font-size: 30px;
 }
 
 .no-select {
@@ -22,6 +22,36 @@ html, body{
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 8px;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.word-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.letter {
+  display: inline-block;
+  animation: bounce 1s infinite;
+  font-family: "Press Start 2P";
+  font-size: 40px;
+}
+
 
 /* ::-webkit-scrollbar {
   width: 8px;

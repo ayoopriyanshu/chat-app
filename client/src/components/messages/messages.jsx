@@ -3,9 +3,11 @@ import useGetMessages from "../../hooks/useGetMessages.js"
 import Singlemessage from "./singleMessage.jsx"
 import Messageskeleton from "../../skeletons/messageSkeleton.jsx"
 import { TbMessages } from "react-icons/tb"
+import Uselistenmessages from "../../hooks/useListenMessages.js"
 
 const Messages = () => {
     const { messages, loading } = useGetMessages();
+    Uselistenmessages();
     const lastMessageRef = useRef();
     useEffect(() => {
         setTimeout(() => {
@@ -25,7 +27,7 @@ const Messages = () => {
             {loading && [...Array(3)].map((_, idx) => <Messageskeleton key={idx} />)}
             {!loading && messages.length === 0 && (
                 <div className="flex items-center justify-center w-full h-full">
-                    <div className="px-4 text-center sm:text-lg md:text-xl text-gray-200 flex flex-col items-center gap-2">
+                    <div className="px-4 text-center sm:text-lg md:text-xl text-gray-200 flex flex-col items-center gap-2 font-mono">
                         <p>Umm... looks like nothing here😴, </p>
                         <p>Start a chat now! 🌟💌🚀</p>
                         <TbMessages className="text-3xl md:text-6xl text-center" />

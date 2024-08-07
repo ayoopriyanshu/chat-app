@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Gendercheckbox from "./genderCheckBox.jsx";
 import Usesignup from "../../hooks/useSignup.js";
+import { linkedinUrl, githubUrl, gmailUrl } from "../../assets/icons/linedin.jsx";
+import Themeselector from "../../components/themes/themeSelector.jsx";
 
 const SignUp = () => {
 
@@ -27,10 +29,20 @@ const SignUp = () => {
 
     return (
         <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
+            <h1 className="absolute top-10 left-10 text-4xl bg-gray-300 p-3 rounded-2xl font-semibold login-header no-select">CHATRR</h1>
+            <div className="absolute top-10 right-10 no-select"><Themeselector /></div>
+            <div className="absolute bottom-5 right-10 text-right no-select">
+                <p className=" text-sm font-semibold font-mono text-gray-300 ">CREATED BY</p> <p className="text-lg font-semibold font-mono text-gray-300 "> PRIYANSHU SHARMA</p>
+                <p className=" flex text-lg font-semibold font-mono text-gray-300">CONNECT WITH ME:
+                    <a href="https://www.linkedin.com/in/ayoopriyanshu/" target="_blank" rel="noopener noreferrer"><img src={linkedinUrl} alt="linkedin/ayoopriyanshu" className="icon" title="Linkedin Profile" /></a>
+                    |
+                    <a href="https://github.com/ayoopriyanshu" target="_blank" rel="noopener noreferrer"><img src={githubUrl} alt="github/ayoopriyanshu" className="icon" title="Github Profile" /></a>
+                    |
+                    <a href="mailto:priyanshusharma3377@gmail.com" target="_blank" rel="noopener noreferrer"><img src={gmailUrl} alt="Gmail" className="icon" title="My Gmail" /></a>
+                </p>
+            </div>
             <div className='w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0'>
-                <h1 className='text-3xl font-semibold text-center text-gray-300 font-mono no-select'>SignUp
-                    <span className="login-header">CHATRR</span>
-                </h1>
+                <h1 className='text-3xl font-semibold text-center text-gray-300 font-mono no-select'>SignUp</h1>
 
                 <form onSubmit={handleSubmit}>
                     <div>
